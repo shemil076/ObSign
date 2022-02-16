@@ -4,7 +4,13 @@ void main() {
     runApp(MaterialApp(
       initialRoute: '/',
       routes:{
-        '/': (context) => LandingPageState(),
+        '/': (context) => SplashScreen(),
+        '/second': (context) => LoginScreen(),
+        '/third' : (context) => SignUpScreen(),
+        '/forth' : (context) => LandingPageState(),
+        '/fifth' : (context) => ScanTheObjectState(),
+        '/sixth' : (context) => ShowTheSignState(),
+        '/seventh': (context) => FeedbackPageState(),
       },
     ));
 }
