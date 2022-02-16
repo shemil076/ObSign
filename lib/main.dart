@@ -4,7 +4,7 @@ void main() {
     runApp(MaterialApp(
       initialRoute: '/',
       routes:{
-
+        '/': (context) => LandingPageState(),
       },
     ));
 }
