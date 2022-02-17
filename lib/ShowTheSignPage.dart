@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 
+
+import 'LandingPage.dart';
+
 class ShowTheSignState extends StatefulWidget{
   const ShowTheSignState({Key? key}) : super(key: key);
 
@@ -115,7 +118,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             children: [
                               RaisedButton(
                                 onPressed: () {
-                                  // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));       // uncomment this line after set the navigation to the lankding page
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));       // uncomment this line after set the navigation to the lankding page
                                 },
                                 color: Colors.lightBlue[400],
                                 shape: RoundedRectangleBorder(
