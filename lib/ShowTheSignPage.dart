@@ -23,6 +23,22 @@ class ShowSignPage extends State<ShowTheSignState> {
               )
             )
           ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: 10.0),
+                Container(
+                  width: 100.0,
+                  height: 100.0,
+                  child: Image(
+                    image: AssetImage('assets/logo/logo_transparent.png'),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ]
       )
     );
