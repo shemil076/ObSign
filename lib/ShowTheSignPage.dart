@@ -28,11 +28,11 @@ class ShowSignPage extends State<ShowTheSignState> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 10.0),
+                const SizedBox(height: 10.0),
                 Container(
                   width: 100.0,
                   height: 100.0,
-                  child: Image(
+                  child: const Image(
                     image: AssetImage('assets/logo/logo_transparent.png'),
                   ),
                 ),
@@ -54,7 +54,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                         colors: [Colors.white.withOpacity(0.70), Colors.white.withOpacity(0.20), Colors.lightBlueAccent.withOpacity(0.10), Colors.lightBlueAccent.withOpacity(0.12)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        stops: [0.0, 0.39, 0.40, 1.0],
+                        stops: const [0.0, 0.39, 0.40, 1.0],
                       ),
                       blur: 15.0,
                       borderWidth: 1.5,
@@ -63,8 +63,32 @@ class ShowSignPage extends State<ShowTheSignState> {
                       shadowColor: Colors.black.withOpacity(0.20),
                       alignment: Alignment.center,
                       frostedOpacity: 0.2,
-                      margin: EdgeInsets.all(8.0),
-                      padding: EdgeInsets.all(8.0),
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children:  [
+                          SizedBox(
+                            height: 30.00,
+                          ),
+                          Text("In Sign",
+                            style: TextStyle(color: Colors.cyan[900], fontSize: 20.0, fontWeight: FontWeight.bold),
+                          ),
+                          Divider(
+                            thickness: 1.5,
+                            height: 60.0,
+                            color: Colors.grey[50],
+                            indent: 30,
+                            endIndent: 30,
+                          ),
+                          Container(
+                            width: 125.0,
+                            height: 125.0,
+                            child: Image(
+                              image: AssetImage('assets/images/cup.png'),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
