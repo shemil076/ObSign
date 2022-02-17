@@ -110,6 +110,38 @@ class ShowSignPage extends State<ShowTheSignState> {
                           SizedBox(
                             height: 40.00,
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              RaisedButton(
+                                onPressed: () {
+                                  // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));       // uncomment this line after set the navigation to the lankding page
+                                },
+                                color: Colors.lightBlue[400],
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25)
+                                ),
+                                child: Text('Exit',
+                                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )
+                                ),
+
+                              ),
+                              RaisedButton(
+                                onPressed: () {
+                                  // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FeedbackPageState()));       // uncomment this line after set the navigation to the feedback page
+                                },
+                                color: Colors.lightBlue[400],
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25)
+                                ),
+                                child: Text('Feedback',
+                                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )
+                                ),
+
+                              ),
+
+                            ],
+                          ),
                         ],
                       ),
                     ),
