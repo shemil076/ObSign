@@ -8,3 +8,11 @@ class FeedbackPageState extends StatefulWidget {
   State<FeedbackPageState> createState() => FeedbackPage();
 
 }
+class FeedbackPage extends State<FeedbackPageState> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+
+}
+
