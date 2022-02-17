@@ -14,10 +14,10 @@ class LandingPageState extends StatefulWidget {
 class LandingPage extends State<LandingPageState> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(  //Scaffold used to implements the basic material design visual layout structure
         body: Stack(
           children: [
-            Container(
+            Container( //Container  used to store more widgets and position it on the screen accordingly
               decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -34,7 +34,7 @@ class LandingPage extends State<LandingPageState> {
                       width: 100.0,
                       height: 100.0,
                       child: Image(
-                        image: AssetImage('assets/images/logo_transparent.png'),
+                        image: AssetImage('assets/images/logo_transparent.png'), //image added
                       ),
                     ),
                     Center(
@@ -89,20 +89,20 @@ class LandingPage extends State<LandingPageState> {
                                   children: [
                                     RaisedButton(
                                         onPressed: () {
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanTheObjectState()));
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanTheObjectState())); //navigate to the scan the object page once the button is clicked
                                         },
                                         color: Colors.lightBlue[400],
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(25.0),
                                         ),
                                         child: Text(
-                                          "Scan the object",
+                                          "Scan the object", //button text
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         )),
-                                    Text("!Tip:Hit the button to scan object",
+                                    Text("!Tip:Tap the button to scan object",
                                       style: TextStyle(color: Colors.cyan[900],
                                         fontSize: 18.0,
                                         fontStyle: FontStyle.italic,),
