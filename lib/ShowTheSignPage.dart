@@ -11,7 +11,21 @@ class ShowTheSignState extends StatefulWidget{
 class ShowSignPage extends State<ShowTheSignState> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.cyan, Colors.blueGrey]
+              )
+            )
+          ),
+        ]
+      )
+    );
   }
 
 }
