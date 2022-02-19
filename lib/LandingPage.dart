@@ -34,7 +34,7 @@ class LandingPage extends State<LandingPageState> {
                       width: 100.0,
                       height: 100.0,
                       child: Image(
-                        image: AssetImage('assets/images/logo_transparent.png'), //image added
+                        image: AssetImage('assets/logo/logo_transparent.png'), //image added
                       ),
                     ),
                     Center(

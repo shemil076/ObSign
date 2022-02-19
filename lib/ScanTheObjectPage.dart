@@ -33,7 +33,7 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
               width: 100.0,
               height: 100.0,
               child: Image(
-                image: AssetImage('assets/images/logo_transparent.png'),
+                image: AssetImage('assets/logo/logo_transparent.png'),
               ),
             ),
             Center(

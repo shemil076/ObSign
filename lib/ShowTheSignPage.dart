@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 
 
+import 'FeedbackPage.dart';
 import 'LandingPage.dart';
 
 class ShowTheSignState extends StatefulWidget{
@@ -70,7 +71,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children:  [
-                          SizedBox(
+                          const SizedBox(
                             height: 30.00,
                           ),
                           Text("In Sign",
@@ -110,7 +111,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                           Text("Cup",
                             style: TextStyle(color: Colors.cyan[900], fontSize: 20.0),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 40.00,
                           ),
                           Row(
@@ -124,25 +125,23 @@ class ShowSignPage extends State<ShowTheSignState> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(25)
                                 ),
-                                child: Text('Exit',
+                                child: const Text('Exit',
                                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )
                                 ),
 
                               ),
                               RaisedButton(
                                 onPressed: () {
-                                  // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FeedbackPageState()));       // uncomment this line after set the navigation to the feedback page
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FeedbackPageState()));       // uncomment this line after set the navigation to the feedback page
                                 },
                                 color: Colors.lightBlue[400],
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(25)
                                 ),
-                                child: Text('Feedback',
+                                child: const Text('Feedback',
                                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )
                                 ),
-
                               ),
-
                             ],
                           ),
                         ],
@@ -157,5 +156,4 @@ class ShowSignPage extends State<ShowTheSignState> {
       )
     );
   }
-
 }
