@@ -6,3 +6,10 @@ class ScanTheObjectState extends StatefulWidget {
   @override
   State<ScanTheObjectState> createState() => ScanTheObjectPage();
 }
+
+class ScanTheObjectPage extends State<ScanTheObjectState> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}
