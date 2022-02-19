@@ -7,3 +7,7 @@ class SignUpScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => InitState();
 }
+
+class InitState extends State<SignUpScreen> {
+  @override
+  Widget build(BuildContext context) => initWidget();
