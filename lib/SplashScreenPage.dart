@@ -34,6 +34,29 @@ class StartState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold();   
+    return initWidget(context);
+  }
+  Widget initWidget(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [Colors.cyan, Colors.blueGrey],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter
+                )
+            ),
+          ),
+          Center(
+            child: Container(
+              child: Image.asset('assets/images/logo_transparent.png'),
+              height: 125,
+              width: 125,
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
