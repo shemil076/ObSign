@@ -123,8 +123,6 @@ class FeedbackPage extends State<FeedbackPageState> {
           )
         ],
       ),);
-
   }
-
 }
 
