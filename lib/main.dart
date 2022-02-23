@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 import 'FeedbackPage.dart';
@@ -8,19 +9,24 @@ import 'ShowTheSignPage.dart';
 import 'SignUpScreenPage.dart';
 import 'SplashScreenPage.dart';
 
-void main() {
-    runApp(MaterialApp(
-      initialRoute: '/',
-      routes:{
-        '/': (context) => SplashScreen(),
-        '/second': (context) => LoginScreen(),
-        '/third' : (context) => SignUpScreen(),
-        '/forth' : (context) => LandingPageState(),
-        '/fifth' : (context) => ScanTheObjectState(),
-        '/sixth' : (context) => ShowTheSignState(),
-        '/seventh': (context) => FeedbackPageState(),
-      },
-    ));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final cameras = await availableCameras();
+// Get a specific camera from the list of available cameras.
+  final firstCamera = cameras.first;
+
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => SplashScreen(),
+      '/second': (context) => LoginScreen(),
+      '/third': (context) => SignUpScreen(),
+      '/forth': (context) => LandingPageState(),
+      '/fifth': (context) => ScanTheObjectState(camera: firstCamera),
+      '/sixth': (context) => ShowTheSignState(),
+      '/seventh': (context) => FeedbackPageState(),
+    },
+  ));
 }
 
 class MyApp extends StatelessWidget {
