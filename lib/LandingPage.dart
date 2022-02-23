@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 
@@ -88,8 +89,14 @@ class LandingPage extends State<LandingPageState> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     RaisedButton(
-                                        onPressed: () {
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanTheObjectState())); //navigate to the scan the object page once the button is clicked
+                                        onPressed: () async {
+
+                                          WidgetsFlutterBinding.ensureInitialized();
+                                          final cameras = await availableCameras();
+                                          // Get a specific camera from the list of available cameras.
+                                          final firstCamera = cameras.first;
+
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanTheObjectState( camera: firstCamera,)));
                                         },
                                         color: Colors.lightBlue[400],
                                         shape: RoundedRectangleBorder(
