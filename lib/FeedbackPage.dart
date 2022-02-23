@@ -83,9 +83,7 @@ class FeedbackPage extends State<FeedbackPageState> {
                             allowHalfRating: true,
                             itemBuilder :(context, _)=> Icon(
                               Icons.star,
-                              color: Colors.indigoAccent,
-
-
+                              color: Colors.amber,
                             ),
                             onRatingUpdate: (rating){
                               print(rating);
