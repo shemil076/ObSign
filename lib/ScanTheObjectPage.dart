@@ -177,3 +177,15 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
     ));
   }
 }
+
+class DisplayPictureScreen extends StatelessWidget {
+  final String imagePath;
+
+  const DisplayPictureScreen({Key? key, required this.imagePath})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}
