@@ -5,6 +5,8 @@ import 'package:glass_kit/glass_kit.dart';
 import 'FeedbackPage.dart';
 import 'LandingPage.dart';
 
+
+
 class ShowTheSignState extends StatefulWidget{
   const ShowTheSignState({Key? key}) : super(key: key);
 
@@ -13,8 +15,15 @@ class ShowTheSignState extends StatefulWidget{
 }
 
 class ShowSignPage extends State<ShowTheSignState> {
+
+  late String name;
+  void getSign(){
+    name = "Apple";
+  }
+
   @override
   Widget build(BuildContext context) {
+    getSign();
     return Scaffold(
       body: Stack(
         children: [
@@ -72,28 +81,28 @@ class ShowSignPage extends State<ShowTheSignState> {
                       child: Column(
                         children:  [
                           const SizedBox(
-                            height: 30.00,
+                            height: 10.00,
                           ),
                           Text("In Sign",
                             style: TextStyle(color: Colors.cyan[900], fontSize: 20.0, fontWeight: FontWeight.bold),
                           ),
                           Divider(
                             thickness: 1.5,
-                            height: 60.0,
+                            height: 40.0,
                             color: Colors.grey[50],
                             indent: 30,
                             endIndent: 30,
                           ),
                           Container(
-                            width: 125.0,
-                            height: 125.0,
-                            child: Image(
-                              image: AssetImage('assets/images/cup.png'),
+                            width: 250.0,
+                            height: 250.0,
+                            child: Image.network(
+                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$name.jpg',
                             ),
                           ),
                           Divider(
                             thickness: 1.5,
-                            height: 60.0,
+                            height: 40.0,
                             color: Colors.cyan[600],
                             indent: 10,
                             endIndent: 10,
@@ -103,16 +112,16 @@ class ShowSignPage extends State<ShowTheSignState> {
                           ),
                           Divider(
                             thickness: 1.5,
-                            height: 60.0,
+                            height: 40.0,
                             color: Colors.grey[50],
                             indent: 30,
                             endIndent: 30,
                           ),
-                          Text("Cup",
+                          Text(name,
                             style: TextStyle(color: Colors.cyan[900], fontSize: 20.0),
                           ),
                           const SizedBox(
-                            height: 40.00,
+                            height: 20.00,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
