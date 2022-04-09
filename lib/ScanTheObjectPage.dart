@@ -142,23 +142,23 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
                               child: const Icon(Icons.camera_alt),
                             ),
                             SizedBox(height: 10),
-                            RaisedButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          ShowTheSignState()));
-                                },
-                                color: Colors.lightBlue[400],
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25.0),
-                                ),
-                                child: Text(
-                                  "Next",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )),
+                            // RaisedButton(
+                            //     onPressed: () {
+                            //       Navigator.of(context).push(MaterialPageRoute(
+                            //           builder: (context) =>
+                            //               ShowTheSignState()));
+                            //     },
+                            //     color: Colors.lightBlue[400],
+                            //     shape: RoundedRectangleBorder(
+                            //       borderRadius: BorderRadius.circular(25.0),
+                            //     ),
+                            //     child: Text(
+                            //       "Next",
+                            //       style: TextStyle(
+                            //         color: Colors.white,
+                            //         fontWeight: FontWeight.bold,
+                            //       ),
+                            //     )),
                             SizedBox(height: 10),
                             Text(
                               "!Warning Please hold the camera for seconds",
@@ -253,19 +253,23 @@ class DisplayPictureScreen extends StatelessWidget {
                                 ),
 
                               ),
-                              SizedBox(height: 70),
-                              RaisedButton(onPressed:()async
-                              {SimpleS3 _simpleS3 = SimpleS3();
-                              String result = await _simpleS3.uploadFile(
-                                  File(imagePath),
-                                  "sdgpinput",
-                                  "ap-south-1:71968705-b2d0-4911-9cac-078532ee7759",
-                                  AWSRegions.apSouth1,
-                                  debugLog: true,
-                                  s3FolderPath: "test",
-                                  fileName: "inputImage.jpg"
-                              );
-                              print(result);
+                              SizedBox(height: 20),
+                              RaisedButton(onPressed:()async {
+
+                                SimpleS3 _simpleS3 = SimpleS3();
+                                String result = await _simpleS3.uploadFile(
+                                    File(imagePath),
+                                    "sdgpinput",
+                                    "ap-south-1:71968705-b2d0-4911-9cac-078532ee7759",
+                                    AWSRegions.apSouth1,
+                                    debugLog: true,
+                                    s3FolderPath: "test",
+                                    fileName: "inputImage.jpg"
+                                );
+                                print(result);
+
+
+
 
 
 

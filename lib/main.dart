@@ -23,7 +23,7 @@ Future<void> main() async {
       '/third': (context) => SignUpScreen(),
       '/forth': (context) => LandingPageState(),
       '/fifth': (context) => ScanTheObjectState(camera: firstCamera),
-      '/sixth': (context) => ShowTheSignState(),
+      '/sixth': (context) => ShowTheSignState(className: name),
       '/seventh': (context) => FeedbackPageState(),
     },
   ));
