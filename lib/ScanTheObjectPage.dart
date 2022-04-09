@@ -250,7 +250,24 @@ class DisplayPictureScreen extends StatelessWidget {
                                 child: Image.file(
                                   File(imagePath),
                                 ),
-                              )
+
+                              ),
+                              SizedBox(height: 70),
+                              RaisedButton(onPressed:(){
+
+                                
+
+                              }, color: Colors.lightBlue[400],
+                                 shape: RoundedRectangleBorder(
+                                   borderRadius: BorderRadius.circular(25.0),
+                                 ),
+                                  child: Text(
+                                    "Show Sign",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )),
                             ]),
                           )))
                 ],

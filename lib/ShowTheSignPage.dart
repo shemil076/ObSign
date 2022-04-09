@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 
@@ -12,18 +13,86 @@ class ShowTheSignState extends StatefulWidget{
 
   @override
   State<ShowTheSignState> createState() => ShowSignPage();
+
+
 }
 
 class ShowSignPage extends State<ShowTheSignState> {
 
-  late String name;
+  late String name = "";
+  late bool showPopup = false;
+  String className = "key" ;
   void getSign(){
-    name = "Apple";
+    var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
+    if(classes.contains(className)) {
+      name = "Apple";
+    }else{
+      name = "";
+      showPopup = true;
+
+    }
+    // for (var i = 0; i < classes.length; i++) {
+    //   if(c) {}
+    // }
   }
 
   @override
   Widget build(BuildContext context) {
-    getSign();
+
+
+      // _AddTodoPopupCard();
+    // getSign();
+    //
+    // if(showPopup) {
+    //   ShowDialog(context){
+    //     return Dialog(
+    //         child : Padding(
+    //           padding: const EdgeInsets.all(32.0),
+    //           child: Hero(
+    //             tag: "",
+    //             child: Material(
+    //               color: Colors.blue,
+    //               elevation: 2,
+    //               shape:
+    //               RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+    //               child: SingleChildScrollView(
+    //                 child: Padding(
+    //                   padding: const EdgeInsets.all(16.0),
+    //                   child: Column(
+    //                     mainAxisSize: MainAxisSize.min,
+    //                     children: [
+    //                       const TextField(
+    //                         decoration: InputDecoration(
+    //                           hintText: 'New todo',
+    //                           border: InputBorder.none,
+    //                         ),
+    //                         cursorColor: Colors.black,
+    //                       ),
+    //                       const Divider(
+    //                         color: Colors.white,
+    //                         thickness: 0.2,
+    //                       ),
+    //
+    //                       const Divider(
+    //                         color: Colors.white,
+    //                         thickness: 0.2,
+    //                       ),
+    //                       RaisedButton(
+    //                         onPressed: () {},
+    //                         child: const Text('Add'),
+    //                       ),
+    //                     ],
+    //                   ),
+    //                 ),
+    //               ),
+    //             ),
+    //           ),
+    //         ),
+    //     );
+    //   }
+    // }
+
+
     return Scaffold(
       body: Stack(
         children: [
@@ -141,7 +210,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                               ),
                               RaisedButton(
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FeedbackPageState()));       // uncomment this line after set the navigation to the feedback page
+                                   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FeedbackPageState()));       // uncomment this line after set the navigation to the feedback page
                                 },
                                 color: Colors.lightBlue[400],
                                 shape: RoundedRectangleBorder(
@@ -163,6 +232,59 @@ class ShowSignPage extends State<ShowTheSignState> {
           ),
         ]
       )
+    );
+  }
+}
+
+
+class _AddTodoPopupCard extends StatelessWidget {
+  /// {@macro add_todo_popup_card}
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Hero(
+          tag: "",
+          child: Material(
+            color: Colors.blue,
+            elevation: 2,
+            shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const TextField(
+                      decoration: InputDecoration(
+                        hintText: 'New todo',
+                        border: InputBorder.none,
+                      ),
+                      cursorColor: Colors.black,
+                    ),
+                    const Divider(
+                      color: Colors.white,
+                      thickness: 0.2,
+                    ),
+
+                    const Divider(
+                      color: Colors.white,
+                      thickness: 0.2,
+                    ),
+                    RaisedButton(
+                      onPressed: () {},
+                      child: const Text('Add'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
