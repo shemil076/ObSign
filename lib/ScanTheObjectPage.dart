@@ -255,7 +255,7 @@ class DisplayPictureScreen extends StatelessWidget {
                               SizedBox(height: 70),
                               RaisedButton(onPressed:(){
 
-                                
+
 
                               }, color: Colors.lightBlue[400],
                                  shape: RoundedRectangleBorder(

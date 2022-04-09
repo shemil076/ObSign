@@ -19,78 +19,10 @@ class ShowTheSignState extends StatefulWidget{
 
 class ShowSignPage extends State<ShowTheSignState> {
 
-  late String name = "";
-  late bool showPopup = false;
-  String className = "key" ;
-  void getSign(){
-    var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
-    if(classes.contains(className)) {
-      name = "Apple";
-    }else{
-      name = "";
-      showPopup = true;
 
-    }
-    // for (var i = 0; i < classes.length; i++) {
-    //   if(c) {}
-    // }
-  }
-
+  String name = '';
   @override
   Widget build(BuildContext context) {
-
-
-      // _AddTodoPopupCard();
-    // getSign();
-    //
-    // if(showPopup) {
-    //   ShowDialog(context){
-    //     return Dialog(
-    //         child : Padding(
-    //           padding: const EdgeInsets.all(32.0),
-    //           child: Hero(
-    //             tag: "",
-    //             child: Material(
-    //               color: Colors.blue,
-    //               elevation: 2,
-    //               shape:
-    //               RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-    //               child: SingleChildScrollView(
-    //                 child: Padding(
-    //                   padding: const EdgeInsets.all(16.0),
-    //                   child: Column(
-    //                     mainAxisSize: MainAxisSize.min,
-    //                     children: [
-    //                       const TextField(
-    //                         decoration: InputDecoration(
-    //                           hintText: 'New todo',
-    //                           border: InputBorder.none,
-    //                         ),
-    //                         cursorColor: Colors.black,
-    //                       ),
-    //                       const Divider(
-    //                         color: Colors.white,
-    //                         thickness: 0.2,
-    //                       ),
-    //
-    //                       const Divider(
-    //                         color: Colors.white,
-    //                         thickness: 0.2,
-    //                       ),
-    //                       RaisedButton(
-    //                         onPressed: () {},
-    //                         child: const Text('Add'),
-    //                       ),
-    //                     ],
-    //                   ),
-    //                 ),
-    //               ),
-    //             ),
-    //           ),
-    //         ),
-    //     );
-    //   }
-    // }
 
 
     return Scaffold(
@@ -237,54 +169,3 @@ class ShowSignPage extends State<ShowTheSignState> {
 }
 
 
-class _AddTodoPopupCard extends StatelessWidget {
-  /// {@macro add_todo_popup_card}
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Hero(
-          tag: "",
-          child: Material(
-            color: Colors.blue,
-            elevation: 2,
-            shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const TextField(
-                      decoration: InputDecoration(
-                        hintText: 'New todo',
-                        border: InputBorder.none,
-                      ),
-                      cursorColor: Colors.black,
-                    ),
-                    const Divider(
-                      color: Colors.white,
-                      thickness: 0.2,
-                    ),
-
-                    const Divider(
-                      color: Colors.white,
-                      thickness: 0.2,
-                    ),
-                    RaisedButton(
-                      onPressed: () {},
-                      child: const Text('Add'),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
