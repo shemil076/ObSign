@@ -6,6 +6,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_s3/simple_s3.dart';
 
+import 'LandingPage.dart';
 import 'ShowTheSignPage.dart';
 
 class ScanTheObjectState extends StatefulWidget {
@@ -268,6 +269,42 @@ class DisplayPictureScreen extends StatelessWidget {
                                 );
                                 print(result);
 
+                                getSign();
+                                if (showPopup){
+                                  showDialog(
+                                    context: context,
+                                    builder: (ctx) => AlertDialog(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(25.0),
+                                      ),
+                                      title: Text("Error 404",
+                                          textAlign: TextAlign.center),
+                                      content: Text("Ops! you scan an object out of our scope",
+                                          textAlign: TextAlign.center),
+                                      actions: <Widget>[
+                                        Center(
+                                          child: RaisedButton(
+                                            color: Colors.lightBlue[400],
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(25.0),
+                                            ),
+                                            onPressed: () {
+                                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+
+                                            },
+                                            child: Text("Home",
+                                                style: TextStyle(color: Colors.white)),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+
+                                }else{
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          ShowTheSignState(className:name)));
+                                }
 
 
 
@@ -294,9 +331,10 @@ class DisplayPictureScreen extends StatelessWidget {
   }
 }
 
+
 late String name = "";
 late bool showPopup = false;
-String className = "-" ;
+String className = "Apple" ;
 void getSign(){
   var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
   if(classes.contains(className)) {
