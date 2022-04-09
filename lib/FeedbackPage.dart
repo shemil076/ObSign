@@ -105,7 +105,7 @@ class FeedbackPage extends State<FeedbackPageState> {
                             SizedBox(
                               height: 40.00,
                             ),
-                            
+
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -250,7 +250,7 @@ class secondpage extends StatelessWidget {
                                 children: [
                                   RaisedButton(
                                     onPressed: () {
-                                      Navigator.pop(context);
+                                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
                                     },
                                     color: Colors.lightBlue[400],
                                     shape: RoundedRectangleBorder(
