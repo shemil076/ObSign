@@ -4,6 +4,8 @@ import "package:flutter/material.dart";
 import 'package:glass_kit/glass_kit.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import 'LandingPage.dart';
+
 class FeedbackPageState extends StatefulWidget {
   const FeedbackPageState({Key? key}) : super(key: key);
 
@@ -103,13 +105,14 @@ class FeedbackPage extends State<FeedbackPageState> {
                             SizedBox(
                               height: 40.00,
                             ),
-
-
+                            
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 RaisedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+                                  },
                                   color: Colors.lightBlue[400],
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(25)
