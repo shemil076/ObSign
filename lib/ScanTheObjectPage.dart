@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_s3/simple_s3.dart';
 
 import 'ShowTheSignPage.dart';
 
@@ -253,7 +254,18 @@ class DisplayPictureScreen extends StatelessWidget {
 
                               ),
                               SizedBox(height: 70),
-                              RaisedButton(onPressed:(){
+                              RaisedButton(onPressed:()async
+                              {SimpleS3 _simpleS3 = SimpleS3();
+                              String result = await _simpleS3.uploadFile(
+                                  File(imagePath),
+                                  "sdgpinput",
+                                  "ap-south-1:71968705-b2d0-4911-9cac-078532ee7759",
+                                  AWSRegions.apSouth1,
+                                  debugLog: true,
+                                  s3FolderPath: "test",
+                                  fileName: "inputImage.jpg"
+                              );
+                              print(result);
 
 
 
