@@ -118,7 +118,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             indent: 30,
                             endIndent: 30,
                           ),
-                          Text(name,
+                          Text(className,
                             style: TextStyle(color: Colors.cyan[900], fontSize: 20.0),
                           ),
                           const SizedBox(

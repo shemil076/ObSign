@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:teambetatech/ShowTheSignPage.dart';
 
+import 'LandingPage.dart';
 import 'ScanTheObjectPage.dart';
 
 class SearchTextState extends StatefulWidget {
@@ -14,6 +15,19 @@ class SearchTextState extends StatefulWidget {
 }
 
 class SearchText extends State<SearchTextState> {
+
+  final nameController = TextEditingController();
+
+  late String name = "-";
+
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    nameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(  //Scaffold used to implements the basic material design visual layout structure
@@ -75,15 +89,70 @@ class SearchText extends State<SearchTextState> {
                                 const SizedBox(
                                   height: 100.0,
                                 ),
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    border: UnderlineInputBorder(),
-                                    labelText: 'Enter the object',
-                                  ),
+                                Container(
+                                  width: 250.0,
+                                  child:  TextField(
+                                    controller: nameController,
+
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: 'Object Name',
+                                    ),
+                                  )
+
+
+                                ),
+
+
+
+                                const SizedBox(
+                                  height: 20.00,
                                 ),
                                 RaisedButton(onPressed : (){
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ShowTheSignState(className: name)));
-                                },
+
+                                  className = nameController.text;
+
+
+                                  getSign();
+                                  if (showPopup){
+                                    showDialog(
+                                      context: context,
+                                      builder: (ctx) => AlertDialog(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(25.0),
+                                        ),
+                                        title: Text("Error 404",
+                                            textAlign: TextAlign.center),
+                                        content: Text("Ops! you scan an object out of our scope",
+                                            textAlign: TextAlign.center),
+                                        actions: <Widget>[
+                                          Center(
+                                            child: RaisedButton(
+                                              color: Colors.lightBlue[400],
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.circular(25.0),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+
+                                              },
+                                              child: Text("Home",
+                                                  style: TextStyle(color: Colors.white)),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+
+                                  }else{
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) =>
+                                            ShowTheSignState(className:name)));
+                                  }
+
+
+
+                                  },
                                     color: Colors.lightBlue[400],
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(25.0),
@@ -102,5 +171,24 @@ class SearchText extends State<SearchTextState> {
                 ))
           ],
         ));
+  }
+}
+
+bool equalsIgnoreCase(String a, String b) =>
+    (a == null && b == null) ||
+        (a != null && b != null && a.toLowerCase() == b.toLowerCase());
+
+
+late String name = "";
+late bool showPopup = false;
+
+void getSign(){
+  var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
+
+  if(classes.contains(className)) {
+    name = className;
+  }else{
+    name = "-";
+    showPopup = true;
   }
 }
