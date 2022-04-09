@@ -5,12 +5,13 @@ import 'package:glass_kit/glass_kit.dart';
 
 import 'FeedbackPage.dart';
 import 'LandingPage.dart';
+import 'ScanTheObjectPage.dart';
 
 
 
 class ShowTheSignState extends StatefulWidget{
-  const ShowTheSignState({Key? key}) : super(key: key);
-
+  late String className;
+  ShowTheSignState({Key? key, required this.className}) : super(key: key);
   @override
   State<ShowTheSignState> createState() => ShowSignPage();
 
@@ -20,7 +21,6 @@ class ShowTheSignState extends StatefulWidget{
 class ShowSignPage extends State<ShowTheSignState> {
 
 
-  String name = '';
   @override
   Widget build(BuildContext context) {
 
@@ -98,7 +98,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             width: 250.0,
                             height: 250.0,
                             child: Image.network(
-                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$name.jpg',
+                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$className.jpg',
                             ),
                           ),
                           Divider(
@@ -135,7 +135,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(25)
                                 ),
-                                child: const Text('Exit',
+                                child: const Text('Home',
                                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )
                                 ),
 
