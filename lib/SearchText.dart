@@ -1,19 +1,19 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
-import 'package:teambetatech/SearchText.dart';
+import 'package:teambetatech/ShowTheSignPage.dart';
 
 import 'ScanTheObjectPage.dart';
 
-class LandingPageState extends StatefulWidget {
-  const LandingPageState({Key? key}) : super(key: key);
+class SearchTextState extends StatefulWidget {
+  const SearchTextState({Key? key}) : super(key: key);
 
   @override
-  State<LandingPageState> createState() => LandingPage();
+  State<SearchTextState> createState() => SearchText();
 
 }
 
-class LandingPage extends State<LandingPageState> {
+class SearchText extends State<SearchTextState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(  //Scaffold used to implements the basic material design visual layout structure
@@ -44,7 +44,7 @@ class LandingPage extends State<LandingPageState> {
                             decoration:
                             BoxDecoration(borderRadius: BorderRadius.circular(30)),
                             child: GlassContainer(
-                              height: 550,
+                              height: 400,
                               width: 300,
                               borderRadius: BorderRadius.circular(30),
                               gradient: LinearGradient(colors: [
@@ -72,66 +72,30 @@ class LandingPage extends State<LandingPageState> {
                               margin: EdgeInsets.all(8.0),
                               padding: EdgeInsets.all(8.0),
                               child: Column(children: [
-                                SizedBox(
+                                const SizedBox(
                                   height: 100.0,
                                 ),
-                                Text(
-                                  "This application is made for the verbally impaired people and normal people who are interested in learning sign language",
-                                  style: TextStyle(
-                                    color: Colors.cyan[900],
-                                    fontSize: 18.0,
-                                    fontStyle: FontStyle.italic,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    border: UnderlineInputBorder(),
+                                    labelText: 'Enter the object',
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 75.0,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    RaisedButton(onPressed : (){
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SearchTextState()));
-                                    },
+                                RaisedButton(onPressed : (){
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ShowTheSignState(className: name)));
+                                },
                                     color: Colors.lightBlue[400],
                                     shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25.0),
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     child: Text(
-                                    "Search sign through text", //button text
-                                    style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    ),
+                                      "Search sign", //button text
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     )
-                                    ),
-                                    RaisedButton(
-                                        onPressed: () async {
-
-                                          WidgetsFlutterBinding.ensureInitialized();
-                                          final cameras = await availableCameras();
-                                          // Get a specific camera from the list of available cameras.
-                                          final firstCamera = cameras.first;
-
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanTheObjectState( camera: firstCamera,)));
-                                        },
-                                        color: Colors.lightBlue[400],
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(25.0),
-                                        ),
-                                        child: Text(
-                                          "Scan the object", //button text
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        )),
-                                    Text("!Tip:Tap the button to scan object",
-                                      style: TextStyle(color: Colors.cyan[900],
-                                        fontSize: 18.0,
-                                        fontStyle: FontStyle.italic,),
-                                    ),
-                                  ],
-                                )
+                                ),
                               ]),
                             )))
                   ],
