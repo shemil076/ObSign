@@ -90,8 +90,6 @@ class StartState extends State<LoginScreen> {
                   ),
                 ),
 
-
-
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -129,7 +127,6 @@ class StartState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-
               ],
             )
         )

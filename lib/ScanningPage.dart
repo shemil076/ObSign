@@ -84,7 +84,7 @@ class _ScanningPage extends State<Scanning> {
 
     if(_output != null ){
       var classLabel = '${_output[0]['label']}';
-      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DisplayPictureScreen(imagePath : _image, ObjectLabel:classLabel)));
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DisplayPictureScreen(imagePath : _image, objectLabel:classLabel)));
     }
 
   }
@@ -242,11 +242,11 @@ class _ScanningPage extends State<Scanning> {
 
 class DisplayPictureScreen extends StatelessWidget {
   final File imagePath;
-  final String  ObjectLabel;
+  final String  objectLabel;
 
 
 
-  const DisplayPictureScreen({Key? key, required this.imagePath, required this.ObjectLabel }) : super(key: key);
+  const DisplayPictureScreen({Key? key, required this.imagePath, required this.objectLabel }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -319,7 +319,7 @@ class DisplayPictureScreen extends StatelessWidget {
 
                                           RaisedButton(onPressed:()async {
 
-                                            getSign(ObjectLabel);
+                                            getSign(objectLabel);
                                             if (showPopup){
                                               showPopup = false;
                                               showDialog(
