@@ -102,7 +102,7 @@ class FeedbackPage extends State<FeedbackPageState> {
                             ),
 
 
-                            SizedBox(
+                            const SizedBox(
                               height: 40.00,
                             ),
 
@@ -261,12 +261,7 @@ class secondpage extends StatelessWidget {
                                     ),
                                   )
 
-
-
-
                                 ],
-
-
 
                               ),
                             ],
