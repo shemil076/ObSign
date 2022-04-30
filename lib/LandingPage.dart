@@ -1,4 +1,3 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:teambetatech/SearchText.dart';
@@ -31,8 +30,8 @@ class LandingPage extends State<LandingPageState> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 10.0),
-                    Container(
+                    const SizedBox(height: 10.0),
+                    const SizedBox(
                       width: 100.0,
                       height: 100.0,
                       child: Image(
