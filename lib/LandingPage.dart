@@ -96,7 +96,7 @@ class LandingPage extends State<LandingPageState> {
                                     shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(25.0),
                                     ),
-                                    child: Text(
+                                    child: const Text(
                                     "Search sign through text", //button text
                                     style: TextStyle(
                                     color: Colors.white,

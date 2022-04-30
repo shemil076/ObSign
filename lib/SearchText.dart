@@ -110,10 +110,10 @@ class SearchText extends State<SearchTextState> {
                                 ),
                                 RaisedButton(onPressed : (){
 
-                                  className = nameController.text;
+                                  var className = nameController.text;
 
 
-                                  getSign();
+                                  getSign(className);
                                   if (showPopup){
                                     showDialog(
                                       context: context,
@@ -174,21 +174,77 @@ class SearchText extends State<SearchTextState> {
   }
 }
 
-bool equalsIgnoreCase(String a, String b) =>
-    (a == null && b == null) ||
-        (a != null && b != null && a.toLowerCase() == b.toLowerCase());
+
 
 
 late String name = "";
 late bool showPopup = false;
 
-void getSign(){
-  var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
-
-  if(classes.contains(className)) {
-    name = className;
-  }else{
-    name = "-";
+void getSign(object) {
+  String classLabel = object;
+  var classes = [
+    "Airplane",
+    "Apple",
+    "Bag",
+    "Bicycle",
+    "Boat",
+    "Brass",
+    "Bread",
+    "Bun",
+    "Bus",
+    "Car",
+    "CD",
+    "Chicken",
+    "Coconut",
+    "Cricket",
+    "Cup",
+    "Desk",
+    "Egg",
+    "Father",
+    "Female",
+    "Fish",
+    "Flower",
+    "Food",
+    "Football",
+    "Frock",
+    "Fruit",
+    "Grass",
+    "Knife",
+    "Male",
+    "Medicine",
+    "Milk",
+    "Motorbike",
+    "Paper",
+    "Pen",
+    "Person",
+    "Plate",
+    "Rock",
+    "Sand",
+    "Saree",
+    "Shirt",
+    "Shoes",
+    "Shorts",
+    "Shower",
+    "Slippers",
+    "Socks",
+    "Spoon",
+    "Tea",
+    "Television",
+    "ThreeWheeler",
+    "Train",
+    "Tree",
+    "Trousers",
+    "Underwear",
+    "Van",
+    "Vegetable",
+    "Vest",
+    "Volleyball",
+    "Water"
+  ];
+  if (classes.contains(classLabel)) {
+    name = classLabel;
+  } else {
+    name = "";
     showPopup = true;
   }
 }
