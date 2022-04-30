@@ -30,6 +30,17 @@ class _ScanningPage extends State<Home> {
 
   }
 
+  pickGalleryImage() async {
+    var image = await picker.getImage(source: ImageSource.gallery);
+
+    if (image == null) return null;
+
+    setState(() {
+      _image = File(image.path);
+    });
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
