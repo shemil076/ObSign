@@ -351,8 +351,8 @@ class DisplayPictureScreen extends StatelessWidget {
                                                 ),
                                               );
                                             }else{
-                                              // Navigator.of(context).push(MaterialPageRoute(
-                                              //     builder: (context) => ShowTheSignState(classLabel:name,)));
+                                              Navigator.of(context).push(MaterialPageRoute(
+                                                  builder: (context) => ShowTheSignState(classLabel:name,)));
 
                                             }
 
