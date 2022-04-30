@@ -8,14 +8,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Scanning extends StatefulWidget {
+  const Scanning({Key? key}) : super(key: key);
 
   @override
   _ScanningPage createState() => _ScanningPage();
 }
 
-class _ScanningPage extends State<Home> {
+class _ScanningPage extends State<Scanning> {
   final picker = ImagePicker();
   late File _image;
   bool _loading = false;
@@ -77,8 +77,17 @@ class _ScanningPage extends State<Home> {
       _output = output!;
     });
 
+    sendData();
   }
 
+  sendData(){
+
+    if(_output != null ){
+      var classLabel = '${_output[0]['label']}';
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DisplayPictureScreen(imagePath : _image, ObjectLabel:classLabel)));
+    }
+
+  }
 
 
   @override

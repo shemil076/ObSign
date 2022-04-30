@@ -147,7 +147,7 @@ class SearchText extends State<SearchTextState> {
                                   }else{
                                     Navigator.of(context).push(MaterialPageRoute(
                                         builder: (context) =>
-                                            ShowTheSignState(className:name)));
+                                            ShowTheSignState(classLabel:name)));
                                   }
 
 
