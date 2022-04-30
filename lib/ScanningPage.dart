@@ -27,7 +27,7 @@ class _ScanningPage extends State<Home> {
     setState(() {
       _image = File(image.path);
     });
-    
+
   }
 
   @override
