@@ -5,6 +5,7 @@ import 'FeedbackPage.dart';
 import 'LandingPage.dart';
 import 'LoginScreenPage.dart';
 import 'ScanTheObjectPage.dart';
+import 'ScanningPage.dart';
 import 'ShowTheSignPage.dart';
 import 'SignUpScreenPage.dart';
 import 'SplashScreenPage.dart';
@@ -22,8 +23,8 @@ Future<void> main() async {
       '/second': (context) => LoginScreen(),
       '/third': (context) => SignUpScreen(),
       '/forth': (context) => LandingPageState(),
-      '/fifth': (context) => ScanTheObjectState(camera: firstCamera),
-      '/sixth': (context) => ShowTheSignState(className: name),
+      '/fifth': (context) => const Scanning(),
+      '/sixth': (context) => ShowTheSignState(classLabel: name),
       '/seventh': (context) => FeedbackPageState(),
     },
   ));

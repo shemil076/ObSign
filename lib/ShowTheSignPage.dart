@@ -10,8 +10,8 @@ import 'ScanTheObjectPage.dart';
 
 
 class ShowTheSignState extends StatefulWidget{
-  late String className;
-  ShowTheSignState({Key? key, required this.className}) : super(key: key);
+  var classLabel;
+  ShowTheSignState({Key? key, required this.classLabel}) : super(key: key);
   @override
   State<ShowTheSignState> createState() => ShowSignPage();
 
@@ -19,7 +19,7 @@ class ShowTheSignState extends StatefulWidget{
 }
 
 class ShowSignPage extends State<ShowTheSignState> {
-
+  late  String classLabel = widget.classLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             width: 250.0,
                             height: 250.0,
                             child: Image.network(
-                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$className.jpg',
+                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$classLabel.jpg',
                             ),
                           ),
                           Divider(
@@ -118,7 +118,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             indent: 30,
                             endIndent: 30,
                           ),
-                          Text(className,
+                          Text(classLabel,
                             style: TextStyle(color: Colors.cyan[900], fontSize: 20.0),
                           ),
                           const SizedBox(
