@@ -5,6 +5,7 @@ import 'package:glass_kit/glass_kit.dart';
 import 'LandingPage.dart';
 import 'ShowTheSignPage.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:tflite/tflite.dart';
 
 
 class Home extends StatefulWidget {
@@ -28,6 +29,7 @@ class _ScanningPage extends State<Home> {
       _image = File(image.path);
     });
 
+    classifyImage(_image);
   }
 
   pickGalleryImage() async {
@@ -38,8 +40,45 @@ class _ScanningPage extends State<Home> {
     setState(() {
       _image = File(image.path);
     });
-    
+
+    classifyImage(_image);
   }
+
+  @override
+  void initState() {
+    super.initState();
+    _loading = true;
+    loadModel().then((value) {});
+  }
+
+  @override
+  void dispose() {
+    Tflite.close();
+    _loading = false;
+  }
+
+  loadModel() async {
+    await Tflite.loadModel(
+        model: 'assets/model_unquant.tflite', labels: 'assets/labels.txt');
+  }
+
+  classifyImage(File image) async {
+    var output = await Tflite.runModelOnImage(
+        path: image.path,
+        numResults: 2,
+        threshold: 0.5,
+        imageMean: 127.5,
+        imageStd: 127.5);
+
+    setState(() {
+      _loading = false;
+      _output = output!;
+    });
+
+
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
