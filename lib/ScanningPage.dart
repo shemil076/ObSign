@@ -310,6 +310,42 @@ class DisplayPictureScreen extends StatelessWidget {
 
                                           RaisedButton(onPressed:()async {
 
+                                            getSign(ObjectLabel);
+                                            if (showPopup){
+                                              showPopup = false;
+                                              showDialog(
+                                                context: context,
+                                                builder: (ctx) => AlertDialog(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius.circular(25.0),
+                                                  ),
+                                                  title: const Text("Error 404",
+                                                      textAlign: TextAlign.center),
+                                                  content: const Text("Ops! you scan an object out of our scope",
+                                                      textAlign: TextAlign.center),
+                                                  actions: <Widget>[
+                                                    Center(
+                                                      child: RaisedButton(
+                                                        color: Colors.lightBlue[400],
+                                                        shape: RoundedRectangleBorder(
+                                                          borderRadius: BorderRadius.circular(25.0),
+                                                        ),
+                                                        onPressed: () {
+                                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
+
+                                                        },
+                                                        child: const Text("Home",
+                                                            style: TextStyle(color: Colors.white)),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            }else{
+                                              // Navigator.of(context).push(MaterialPageRoute(
+                                              //     builder: (context) => ShowTheSignState(classLabel:name,)));
+
+                                            }
 
                                           }, color: Colors.lightBlue[400],
                                               shape: RoundedRectangleBorder(
@@ -333,5 +369,20 @@ class DisplayPictureScreen extends StatelessWidget {
             ]
         )
     );
+  }
+}
+
+late String name = "";
+late bool showPopup = false;
+
+void getSign(object){
+  String classLabel = object ;
+  var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
+  if(classes.contains(classLabel)) {
+    name = classLabel;
+  }else{
+    name = "-";
+    showPopup = true;
+
   }
 }
