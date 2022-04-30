@@ -19,8 +19,19 @@ class _ScanningPage extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+        body: Stack(
+            children:[Container(
+        decoration: const BoxDecoration(
+        gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.cyan, Colors.blueGrey])),
+            ), Center(
+              
+            )
+        ])
+    );
   }
 
 
