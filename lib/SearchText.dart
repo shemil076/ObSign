@@ -4,7 +4,7 @@ import 'package:glass_kit/glass_kit.dart';
 import 'package:teambetatech/ShowTheSignPage.dart';
 
 import 'LandingPage.dart';
-import 'ScanTheObjectPage.dart';
+
 
 class SearchTextState extends StatefulWidget {
   const SearchTextState({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class SearchText extends State<SearchTextState> {
 
   final nameController = TextEditingController();
 
-  late String name = "-";
+
 
 
   @override
@@ -115,6 +115,7 @@ class SearchText extends State<SearchTextState> {
 
                                   getSign(className);
                                   if (showPopup){
+                                    showPopup = false;
                                     showDialog(
                                       context: context,
                                       builder: (ctx) => AlertDialog(

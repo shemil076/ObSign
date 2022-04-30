@@ -5,7 +5,6 @@ import 'package:glass_kit/glass_kit.dart';
 
 import 'FeedbackPage.dart';
 import 'LandingPage.dart';
-import 'ScanTheObjectPage.dart';
 
 
 

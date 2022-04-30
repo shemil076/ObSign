@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'FeedbackPage.dart';
 import 'LandingPage.dart';
 import 'LoginScreenPage.dart';
-import 'ScanTheObjectPage.dart';
 import 'ScanningPage.dart';
 import 'ShowTheSignPage.dart';
 import 'SignUpScreenPage.dart';
