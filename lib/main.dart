@@ -1,12 +1,9 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-
 import 'FeedbackPage.dart';
 import 'LandingPage.dart';
 import 'LoginScreenPage.dart';
 import 'ScanningPage.dart';
 import 'ShowTheSignPage.dart';
-import 'SignUpScreenPage.dart';
 import 'SplashScreenPage.dart';
 
 Future<void> main() async {
@@ -17,11 +14,10 @@ Future<void> main() async {
     routes: {
       '/': (context) => const SplashScreen(),
       '/second': (context) => const LoginScreen(),
-      '/third': (context) => const SignUpScreen(),
-      '/forth': (context) => const LandingPageState(),
-      '/fifth': (context) => const Scanning(),
-      '/sixth': (context) => ShowTheSignState(classLabel: name),
-      '/seventh': (context) => const FeedbackPageState(),
+      '/third': (context) => const LandingPageState(),
+      '/forth': (context) => const Scanning(),
+      '/fifth': (context) => ShowTheSignState(classLabel: name),
+      '/sixth': (context) => const FeedbackPageState(),
     },
   ));
 }

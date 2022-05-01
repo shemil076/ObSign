@@ -1,12 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
-
-
 import 'FeedbackPage.dart';
 import 'LandingPage.dart';
-
-
 
 class ShowTheSignState extends StatefulWidget{
   var classLabel;
