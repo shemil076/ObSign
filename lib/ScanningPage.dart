@@ -27,17 +27,20 @@ class _ScanningPage extends State<Scanning> {
   *
   * */
   pickImage() async {
-    var image = await picker.getImage(source: ImageSource.camera);
+    var image = await picker.getImage(source: ImageSource.camera); // opens the default mobile phone's camera and capture the image
 
     if (image == null) return null;
 
     setState(() {
-      _image = File(image.path);
+      _image = File(image.path);  // assign the image to a temporary file
     });
 
-    classifyImage(_image);
+    classifyImage(_image); // classify Image and return the class name
   }
 
+  /*
+  * Get an image from the gallery as the input
+  * */
   pickGalleryImage() async {
     var image = await picker.getImage(source: ImageSource.gallery);
 
@@ -49,6 +52,7 @@ class _ScanningPage extends State<Scanning> {
 
     classifyImage(_image);
   }
+
 
   @override
   void initState() {
@@ -63,11 +67,18 @@ class _ScanningPage extends State<Scanning> {
     _loading = false;
   }
 
+  /*
+  * Loads the model
+  * */
   loadModel() async {
     await Tflite.loadModel(
         model: 'assets/model_unquant.tflite', labels: 'assets/labels.txt');
   }
 
+
+  /*
+  * Classify the image
+  * */
   classifyImage(File image) async {
     var output = await Tflite.runModelOnImage(
         path: image.path,
@@ -76,7 +87,8 @@ class _ScanningPage extends State<Scanning> {
         imageMean: 127.5,
         imageStd: 127.5);
 
-    setState(() {
+
+    setState(() { // navigator method to navigate to the DisplayPictureScreen page
       _loading = false;
       _output = output!;
     });
@@ -158,7 +170,7 @@ class _ScanningPage extends State<Scanning> {
                                             const SizedBox(height: 15),
 
                                             GestureDetector(
-                                              onTap: pickImage,
+                                              onTap: pickImage, // calls the method to use the camera
                                               child: Container(
                                                 width: MediaQuery.of(context).size.width - 225,
                                                 alignment: Alignment.center,
@@ -194,7 +206,7 @@ class _ScanningPage extends State<Scanning> {
                                             const SizedBox(height: 20),
                                             GestureDetector(
 
-                                              onTap: pickGalleryImage,
+                                              onTap: pickGalleryImage,  // calls the method to get the image from the gallery
                                               child: Container(
 
                                                 width: MediaQuery.of(context).size.width - 225,
@@ -388,6 +400,7 @@ class DisplayPictureScreen extends StatelessWidget {
 late String name = "";
 late bool showPopup = false;
 
+// method check the inout is in the database
 void getSign(object){
   String classLabel = object ;
   var classes = ["airplane","apple","bag","bicycle","boat","brass","bread","bun","bus","car","cd","chicken","coconut","cricket","cup","desk","egg","father","female","fish","flower","food","football","frock","fruit","grass","knife","male","medicine","milk","motorbike","paper","pen","person","plate","rock","sand","saree","shirt","shoes","shorts","shower","slippers","socks","spoon","tea","television","threeWheeler","train","tree","trousers","underwear","van","vegetable","vest","volleyball","water"];

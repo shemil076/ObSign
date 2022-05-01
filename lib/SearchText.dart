@@ -18,9 +18,6 @@ class SearchText extends State<SearchTextState> {
 
   final nameController = TextEditingController();
 
-
-
-
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
@@ -135,7 +132,7 @@ class SearchText extends State<SearchTextState> {
                                                 borderRadius: BorderRadius.circular(25.0),
                                               ),
                                               onPressed: () {
-                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
+                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState())); // navigate to the landing page
 
                                               },
                                               child: const Text("Home",
@@ -182,6 +179,7 @@ class SearchText extends State<SearchTextState> {
 late String name = "";
 late bool showPopup = false;
 
+// method check the inout is in the database
 void getSign(object) {
   String classLabel = object.toLowerCase();
   var classes = ["airplane","apple","bag","bicycle","boat","brass","bread","bun","bus","car","cd","chicken","coconut","cricket","cup","desk","egg","father","female","fish","flower","food","football","frock","fruit","grass","knife","male","medicine","milk","motorbike","paper","pen","person","plate","rock","sand","saree","shirt","shoes","shorts","shower","slippers","socks","spoon","tea","television","threeWheeler","train","tree","trousers","underwear","van","vegetable","vest","volleyball","water"];
