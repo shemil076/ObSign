@@ -31,6 +31,7 @@ class SearchText extends State<SearchTextState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(  //Scaffold used to implements the basic material design visual layout structure
+        resizeToAvoidBottomInset: false,
         body: Stack(
           children: [
             Container( //Container  used to store more widgets and position it on the screen accordingly
