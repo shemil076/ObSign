@@ -122,7 +122,7 @@ class _ScanningPage extends State<Scanning> {
                             decoration:
                             BoxDecoration(borderRadius: BorderRadius.circular(30)),
                             child: GlassContainer(
-                                height: 400,
+                                height: 450,
                                 width: 300,
                                 borderRadius: BorderRadius.circular(30),
                                 gradient: LinearGradient(colors: [
@@ -155,7 +155,7 @@ class _ScanningPage extends State<Scanning> {
                                       Column(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
-                                            const SizedBox(height: 10),
+                                            const SizedBox(height: 15),
 
                                             GestureDetector(
                                               onTap: pickImage,
@@ -315,7 +315,7 @@ class DisplayPictureScreen extends StatelessWidget {
 
                                     child: Column(
                                         children: [
-                                          const SizedBox(height: 70),
+                                          const SizedBox(height: 50),
                                           Center(
                                               child: Image.file(imagePath)
                                           ),
