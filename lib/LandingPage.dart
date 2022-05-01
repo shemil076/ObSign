@@ -5,6 +5,7 @@ import 'ScanningPage.dart';
 
 
 class LandingPageState extends StatefulWidget {
+  //creates landing page state class
   const LandingPageState({Key? key}) : super(key: key);
 
   @override
@@ -72,7 +73,7 @@ class LandingPage extends State<LandingPageState> {
                             margin: const EdgeInsets.all(8.0),
                             padding: const EdgeInsets.all(8.0),
                             child: Column(children: [
-                              const SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0), //creates a sized box to show a text of what the application does
                               Text(
                                 "This application is made for the verbally impaired people and normal people who are interested in learning sign language",
                                 style: TextStyle(
@@ -95,7 +96,7 @@ class LandingPage extends State<LandingPageState> {
                         BoxDecoration(borderRadius: BorderRadius.circular(30)),
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const SearchTextState()));
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const SearchTextState())); //once the user clicks the search text button the user is navigatored to the search text page
                           },
                           child: Container(
 
@@ -136,7 +137,7 @@ class LandingPage extends State<LandingPageState> {
                           curve: Curves.fastOutSlowIn,
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Scanning()));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Scanning()));  //if the user clicks the scan object button the user is navigated to the scan object page
                             },
                             child: Container(
 
