@@ -1,5 +1,3 @@
-
-
 import "package:flutter/material.dart";
 import 'package:glass_kit/glass_kit.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -14,11 +12,9 @@ class FeedbackPageState extends StatefulWidget {
 
 }
 
-
-
 class FeedbackPage extends State<FeedbackPageState> {
 
-  late double rate;
+  late double rate; // initializes the user rating
 
 
   @override
@@ -83,6 +79,7 @@ class FeedbackPage extends State<FeedbackPageState> {
                               height: 200.00,
                             ),
 
+                            // gets the user rating using rating bar
                             RatingBar.builder(
                               itemCount: 5,
                               initialRating: 3,
@@ -111,7 +108,7 @@ class FeedbackPage extends State<FeedbackPageState> {
                               children: [
                                 RaisedButton(
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));  // navigate to landing page once click
                                   },
                                   color: Colors.lightBlue[400],
                                   shape: RoundedRectangleBorder(
@@ -125,7 +122,7 @@ class FeedbackPage extends State<FeedbackPageState> {
                                 ),  RaisedButton(
                                   onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(
-                                        builder: (context)=>secondpage(rating:rate)
+                                        builder: (context)=>secondpage(rating:rate)    // navigate to second page
                                     ));
                                   },
                                   color: Colors.lightBlue[400],
@@ -151,6 +148,10 @@ class FeedbackPage extends State<FeedbackPageState> {
     );
   }
 }
+
+/*
+* Displays the user rating
+* */
 class secondpage extends StatelessWidget {
   late double rating;
   secondpage ({Key ? key,required this.rating}): super (key : key);
