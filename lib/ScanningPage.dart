@@ -22,6 +22,10 @@ class _ScanningPage extends State<Scanning> {
   late List _output;
 
 
+  /*
+  * Get an image by capturing using the default camera as the input
+  *
+  * */
   pickImage() async {
     var image = await picker.getImage(source: ImageSource.camera);
 
@@ -151,7 +155,7 @@ class _ScanningPage extends State<Scanning> {
                                       Column(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
-                                            const SizedBox(height: 30),
+                                            const SizedBox(height: 10),
 
                                             GestureDetector(
                                               onTap: pickImage,
