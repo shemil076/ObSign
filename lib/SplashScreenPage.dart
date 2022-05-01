@@ -10,16 +10,15 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => StartState();
+  State<StatefulWidget> createState() => StartState();  //multiple State objects are associated with the same StatefulWidget because the widget has been inserted into the tree in multiple places.
 }
 
 class StartState extends State<SplashScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    startTime();
+    startTime(); //calls the startTime method to set the timer for the splash screen to appear
   }
 
   startTime() async {
@@ -28,6 +27,7 @@ class StartState extends State<SplashScreen> {
   }
 
   route() {
+    //gives the route to next page when the timer is over for the splash screen
     Navigator.pushReplacement(context, MaterialPageRoute(
         builder: (context) => const LoginScreen()
     ));
@@ -36,6 +36,7 @@ class StartState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return initWidget(context);
   }
+  //builds the structure of the splash screen page
   Widget initWidget(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -50,7 +51,7 @@ class StartState extends State<SplashScreen> {
           ),
           Center(
             child: SizedBox(
-              child: Image.asset('assets/logo/logo_transparent.png'),
+              child: Image.asset('assets/logo/logo_transparent.png'), //adds the image logo to the application
               height: 125,
               width: 125,
             ),
