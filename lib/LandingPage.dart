@@ -90,7 +90,7 @@ class LandingPage extends State<LandingPageState> {
 
                     Row(
                       children: [Container(
-                        padding: const EdgeInsets.fromLTRB(45,0, 0, 5),
+                        padding: const EdgeInsets.fromLTRB(40,0, 0, 5),
                         decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(30)),
                         child: GestureDetector(
