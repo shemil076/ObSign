@@ -5,21 +5,21 @@ import 'FeedbackPage.dart';
 import 'LandingPage.dart';
 
 class ShowTheSignState extends StatefulWidget{
-  var classLabel;
+  var classLabel;       // name of the object
   ShowTheSignState({Key? key, required this.classLabel}) : super(key: key);
   @override
   State<ShowTheSignState> createState() => ShowSignPage();
 
 
 }
-
+ /*
+ * Show the Sign of the respective object
+ * */
 class ShowSignPage extends State<ShowTheSignState> {
   late  String classLabel = widget.classLabel;
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       body: Stack(
         children: [
@@ -38,11 +38,11 @@ class ShowSignPage extends State<ShowTheSignState> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 10.0),
-                Container(
+                const SizedBox(
                   width: 100.0,
                   height: 100.0,
-                  child: const Image(
-                    image: AssetImage('assets/logo/logo_transparent.png'),
+                  child: Image(
+                    image: AssetImage('assets/logo/logo_transparent.png'),        // app logo
                   ),
                 ),
                 Center(
@@ -93,7 +93,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             width: 250.0,
                             height: 250.0,
                             child: Image.network(
-                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$classLabel.jpg',
+                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$classLabel.jpg',    // link that use to retrieve sign of the scanned object
                             ),
                           ),
                           Divider(
@@ -113,7 +113,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             indent: 30,
                             endIndent: 30,
                           ),
-                          Text(classLabel,
+                          Text(classLabel,            // Name of the object in english
                             style: TextStyle(color: Colors.cyan[900], fontSize: 20.0),
                           ),
                           const SizedBox(
@@ -124,7 +124,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             children: [
                               RaisedButton(
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));       // uncomment this line after set the navigation to the lankding page
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));       // Navigator to the main page (Landing Page)
                                 },
                                 color: Colors.lightBlue[400],
                                 shape: RoundedRectangleBorder(
@@ -137,7 +137,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                               ),
                               RaisedButton(
                                 onPressed: () {
-                                   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const FeedbackPageState()));       // uncomment this line after set the navigation to the feedback page
+                                   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const FeedbackPageState()));       // navigate to the feedback page
                                 },
                                 color: Colors.lightBlue[400],
                                 shape: RoundedRectangleBorder(
