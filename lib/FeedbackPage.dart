@@ -14,7 +14,7 @@ class FeedbackPageState extends StatefulWidget {
 
 class FeedbackPage extends State<FeedbackPageState> {
 
-  late double rate; // initializes the user rating
+   double rate = 3.0; // initializes the user rating
 
 
   @override
